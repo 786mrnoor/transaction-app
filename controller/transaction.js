@@ -92,13 +92,13 @@ export async function deleteTransaction(req, res) {
 }
 
 function buildQuery(query, userId) {
-    const { startDate, endDate, type, status, category } = query;
+    const { startDate, endDate, type, status, category, date } = query;
 
     let filter = { userId };
 
     // Date range filter
     if (startDate && endDate) {
-        filter.updatedAt = {
+        filter[date ? date : 'updatedAt'] = {
             $gte: new Date(startDate), // Greater than or equal to startDate
             $lte: new Date(endDate)    // Less than or equal to endDate
         };
