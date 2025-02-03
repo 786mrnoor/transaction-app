@@ -22,7 +22,7 @@ app.use('/api/auth/', authRouter);
 app.use('/api/balance', authenticate, balanceRouter);
 app.use('/api/categories', authenticate, categoriesRouter);
 app.use('/api/transactions', authenticate, transactionRouter);
-app.use('*', path.join(__dirname, 'public', 'index.html'));
+app.use('*', (req, res) => res.send(path.join(__dirname, 'public', 'index.html')));
 
 
 // app.listen(3001);
