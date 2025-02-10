@@ -98,9 +98,11 @@ function buildQuery(query, userId) {
 
     // Date range filter
     if (startDate && endDate) {
+        let lastDate = new Date(endDate);
+        lastDate.setDate(lastDate.getDate() + 1);
         filter[date ? date : 'updatedAt'] = {
             $gte: new Date(startDate), // Greater than or equal to startDate
-            $lte: new Date(endDate)    // Less than or equal to endDate
+            $lte: lastDate    // Less than or equal to endDate
         };
     }
 
