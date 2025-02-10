@@ -23,7 +23,6 @@ app.use('/api/balance', authenticate, balanceRouter);
 app.use('/api/categories', authenticate, categoriesRouter);
 app.use('/api/transactions', authenticate, transactionRouter);
 app.use('*', (req, res) => res.sendFile(path.join(__dirname, process.env.BUILD_DIR, 'index.html')));
-console.log(process.env);
 
 
 // app.listen(3001);
