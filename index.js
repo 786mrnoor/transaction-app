@@ -15,14 +15,15 @@ import transactionRouter from './routes/transaction.js';
 connectDB();
 const app = express();
 
-app.use(express.static(path.join(__dirname, process.env.PUBLIC_URI)));
+app.use(express.static(path.join(__dirname, process.env.BUILD_DIR)));
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/auth/', authRouter);
 app.use('/api/balance', authenticate, balanceRouter);
 app.use('/api/categories', authenticate, categoriesRouter);
 app.use('/api/transactions', authenticate, transactionRouter);
-app.use('*', (req, res) => res.sendFile(path.join(__dirname, process.env.PUBLIC_URI, 'index.html')));
+app.use('*', (req, res) => res.sendFile(path.join(__dirname, process.env.BUILD_DIR, 'index.html')));
+console.log(process.env);
 
 
 // app.listen(3001);
