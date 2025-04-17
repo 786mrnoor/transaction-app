@@ -1,0 +1,25 @@
+#loaderContainer {
+    position: fixed;
+    inset: 0;
+    display: none; /* flex */
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 9999;
+}
+#loaderContainer .loader{
+    aspect-ratio: 1;
+    border: 16px solid #fff;
+    border-radius: 50%;
+    border-top-color: #4169e1;
+    width: 120px;
+    -webkit-animation: rotate 1.2s ease-out infinite;
+    animation: rotate 1.2s ease-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(1turn);
+        transform: rotate(1turn);
+    }
+}

@@ -6,7 +6,7 @@ export default async function balance(req, res) {
         res.status(200).json(balance);
     } catch (error) {
         res.status(400).json({ error: true, message: error.message });
-        // console.log(error);
+        console.error(error);
     }
 };
 

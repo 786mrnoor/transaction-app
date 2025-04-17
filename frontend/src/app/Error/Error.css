@@ -1,0 +1,105 @@
+body:has(.errorPage) {
+    font-family: 'Poppins', 'sans-serif';
+    /* background-color: royalblue; */
+    background: -webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176);
+    min-height: 100vh;
+}
+
+.errorPage {
+    width: 90%;
+    max-width: 600px;
+    padding: 50px;
+    background-color: white;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.errorPage h1 {
+    position: relative;
+    font-size: 18vw;
+    line-height: 1em;
+    font-weight: bold;
+    /* background: linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176);
+    background-clip: text;
+    -webkit-background-clip: text; */
+    color: transparent;
+}
+
+.errorPage h1::after {
+    content: '404';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 400%;
+    animation: animate 4s infinite linear;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+
+    25% {
+        background-position: 100% 0;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-position: 0 100%;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.errorPage h3 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.errorPage p {
+    font-size: 1.2em;
+    color: #0d0d0d;
+}
+
+.errorPage a {
+    text-decoration: none;
+    border: 2px solid #69a6ce;
+    color: #69a6ce;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.4s all ease;
+}
+
+.errorPage a:hover {
+    background-color: #69a6ce;
+    color: white;
+}
+
+
+@media (width < 500px) and (width > 390px) {
+    .errorPage {
+        padding: 50px 20px;
+    }
+
+}
+
+@media (width < 390px) {
+    .errorPage {
+        padding: 50px 10px;
+    }
+
+}
