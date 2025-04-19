@@ -1,0 +1,17 @@
+import useTitle from '@/hooks/use-title';
+import TransactionContextProvider from "@/context-providers/transactions-context-provider";
+import Form from './form';
+import Table from '@/components/table/index';
+
+export default function Page() {
+    useTitle();
+    return (
+        <TransactionContextProvider>
+            <div className="my-container p-3 p-lg-4 index-page">
+                <Form />
+                <hr />
+                <Table />
+            </div>
+        </TransactionContextProvider>
+    )
+};
