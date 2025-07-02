@@ -10,5 +10,5 @@ const connectDB = async () => {
   }
 };
 
-mongoose.set('debug', true)
+// mongoose.set('debug', true)
 export default connectDB;
