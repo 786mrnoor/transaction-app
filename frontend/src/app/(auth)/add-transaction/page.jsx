@@ -4,7 +4,7 @@ import Form from './form';
 import Table from '@/components/table/index';
 
 export default function Page() {
-    useTitle();
+    useTitle('Add Transaction');
     return (
         <TransactionContextProvider>
             <div className="my-container p-3 p-lg-4 index-page">

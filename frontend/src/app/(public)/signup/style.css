@@ -126,7 +126,9 @@ body:has(.signupContainer) {
 
             a {
                 color: #4169e1;
-                outline: none;
+                padding-inline: 4px;
+                margin-left: 3px;
+                /* outline: transparent; */
                 text-decoration: none;
             }
         }

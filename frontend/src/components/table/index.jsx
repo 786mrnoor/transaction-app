@@ -60,6 +60,7 @@ function sortAndFilter(data, { sort, search, page, limit }) {
             let valB = b[key];
             if (valA < valB) return direction === 'asc' ? -1 : 1;
             if (valA > valB) return direction === 'asc' ? 1 : -1;
+            if (valA === valB && key === 'type') return a.amount - b.amount;
             return 0;
         })
         .filter((t) => {

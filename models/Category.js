@@ -1,8 +1,8 @@
-import mongoose, { Schema, model } from "mongoose";
+import { Schema, model } from "mongoose";
 
 const categorySchema = new Schema(
     {
-        userId: { type: mongoose.ObjectId, required: true, ref: 'User' },
+        userId: { type:  Schema.Types.ObjectId, required: true, ref: 'User' },
         title: { type: String, required: true, minlength: [3, 'title must be greater than 3 character.']},
     },
     {

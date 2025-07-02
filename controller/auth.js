@@ -4,7 +4,6 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import User from '../models/User.js';
 import Category from '../models/Category.js';
-import Balance from '../models/Balance.js';
 
 export async function register(req, res) {
     try {
@@ -16,8 +15,6 @@ export async function register(req, res) {
         await user.save();
         // store default category;
         await new Category({ userId: user._id, title: 'Default' }).save();
-        // // store balance;
-        await new Balance({ _id: user._id }).save();
 
         // // If every validation passes
         const token = generateToken(user._id, fullName, email);
