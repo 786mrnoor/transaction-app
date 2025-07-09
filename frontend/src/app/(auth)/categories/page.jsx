@@ -20,8 +20,11 @@ export default function Page() {
                 window.alert('Deleted Successfully');
             } catch (error) {
                 console.error(error);
+                if (error.message) {
+                    window.alert(error.message);
+                }
             }
-            finally{
+            finally {
                 setLoading(false);
             }
         }

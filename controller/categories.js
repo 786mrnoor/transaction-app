@@ -1,4 +1,5 @@
 import Category from '../models/Category.js';
+import Transaction from '../models/Transaction.js';
 
 export async function getAll(req, res) {
     try {
@@ -55,13 +56,19 @@ export async function deleteCategory(req, res) {
     try {
         let userId = req.user.id;
         let _id = req.params.id;
-        await Category.findOneAndDelete({ userId, _id });
+        const transaction = await Transaction.findOne({ categoryId: _id }).exec();
+        if (transaction) {
+            res.status(400).json({ error: true, message: 'Category is in use. Delete all transactions first.' });
+        }
+        else {
+            await Category.findOneAndDelete({ userId, _id });
 
-        res.status(200).json({
-            _id,
-            isDeleted: true,
-            deletedOn: new Date().toISOString()
-        });
+            res.status(200).json({
+                _id,
+                isDeleted: true,
+                deletedOn: new Date().toISOString()
+            });
+        }
     } catch (error) {
         res.status(400).json({ error: true, message: error.message });
         // console.log(error);
