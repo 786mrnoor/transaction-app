@@ -29,5 +29,4 @@ app.use('*', (req, res) => res.sendFile(path.join(__dirname, 'frontend/build', '
 // app.listen(3001, () => {
 //     console.log('http://localhost:3001/');
 // });
-
 export default app;
