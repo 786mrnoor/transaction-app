@@ -17,7 +17,8 @@ const pwaConfig = {
     workbox: {
         globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,svg,json}'],
     },
-    manifest: manifest
+    manifest: manifest,
+    injectRegister: 'script-defer'
 }
 export default defineConfig({
     publicDir: 'public', // CRA's default public directory
