@@ -1,13 +1,17 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 const categorySchema = new Schema(
-    {
-        userId: { type:  Schema.Types.ObjectId, required: true, ref: 'User' },
-        title: { type: String, required: true, minlength: [3, 'title must be greater than 3 character.']},
+  {
+    userId: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
+    title: {
+      type: String,
+      required: true,
+      minlength: [3, 'title must be greater than 3 character.'],
     },
-    {
-        timestamps: true,
-    }
+  },
+  {
+    timestamps: true,
+  }
 );
 
 // Unique constraint on user_id and title

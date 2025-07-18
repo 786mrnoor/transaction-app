@@ -1,8 +1,8 @@
-import express from 'express';
 import cookieParser from 'cookie-parser';
-import connectDB from './dbConfig.js';
+import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import connectDB from './dbConfig.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -26,7 +26,7 @@ app.use('/api/transactions', authenticate, transactionRouter);
 app.use('*', (req, res) => res.sendFile(path.join(__dirname, 'frontend/build', 'index.html')));
 
 // comment this before deploying
-// app.listen(3001, () => {
-//     console.log('http://localhost:3001/');
-// });
+app.listen(3001, () => {
+  console.log('http://localhost:3001/');
+});
 export default app;

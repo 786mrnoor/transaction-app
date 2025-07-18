@@ -1,0 +1,10 @@
+node_modules
+dist
+build
+*.html
+package-lock.json
+package.json
+.gitignore
+.vscode
+*.json
+frontend
