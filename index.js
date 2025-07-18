@@ -26,7 +26,7 @@ app.use('/api/transactions', authenticate, transactionRouter);
 app.use('*', (req, res) => res.sendFile(path.join(__dirname, 'frontend/build', 'index.html')));
 
 // comment this before deploying
-app.listen(3001, () => {
-  console.log('http://localhost:3001/');
-});
+// app.listen(3001, () => {
+//   console.log('http://localhost:3001/');
+// });
 export default app;
