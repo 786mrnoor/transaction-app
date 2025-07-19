@@ -2,8 +2,8 @@
 import jwt from 'jsonwebtoken';
 // import uniqueId from '../helpers/uniqueId.js';
 import bcrypt from 'bcryptjs';
-import User from '../models/User.js';
 import Category from '../models/Category.js';
+import User from '../models/User.js';
 
 export async function register(req, res) {
   try {
@@ -61,7 +61,7 @@ export async function login(req, res) {
     });
     res.status(200).json({ success: true, message: 'logged-in' });
   } catch (err) {
-    // console.log(err);
+    console.log(err);
     res.status(400).json({ error: true, message: err.message });
   }
 }

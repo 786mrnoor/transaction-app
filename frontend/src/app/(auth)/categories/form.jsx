@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { useCategoryDispatch } from '@/context-providers/category-context-provider';
 import { add, update } from '@/actions/categories';
 import Loader from '@/components/loader';
+import { useCategoryDispatch } from '@/context-providers/category-context-provider';
 
 export default function Form({ edit, setEdit }) {
   const [title, setValue] = useState('');

@@ -1,6 +1,5 @@
 body:has(.signupContainer) {
   background-color: #4169e1;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .signupContainer {

@@ -95,17 +95,17 @@ function buildQuery(query, userId) {
   }
 
   // Type filter (if not "All")
-  if (type) {
+  if (type && type !== 'All') {
     filter.type = type;
   }
 
   // Status filter (if not "All")
-  if (status) {
+  if (status && status !== 'All') {
     filter.status = status;
   }
 
   // Category filter (if not "All")
-  if (category) {
+  if (category && category !== 'All') {
     filter.categoryId = category;
   }
   return filter;

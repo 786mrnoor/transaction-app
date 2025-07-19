@@ -16,17 +16,17 @@ connectDB();
 const app = express();
 
 //use the name of the public build folder before deploying the app, don't use env variables for this because it does not work
-app.use(express.static(path.join(__dirname, 'frontend/build')));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/auth/', authRouter);
 app.use('/api/balance', authenticate, balanceRouter);
 app.use('/api/categories', authenticate, categoriesRouter);
 app.use('/api/transactions', authenticate, transactionRouter);
-app.use('*', (req, res) => res.sendFile(path.join(__dirname, 'frontend/build', 'index.html')));
+app.use('*', (req, res) => res.sendFile(path.join(__dirname, 'build', 'index.html')));
 
 // comment this before deploying
-// app.listen(3001, () => {
-//   console.log('http://localhost:3001/');
-// });
+app.listen(3001, () => {
+  console.log('http://localhost:3001/');
+});
 export default app;

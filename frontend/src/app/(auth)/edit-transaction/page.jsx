@@ -10,7 +10,7 @@ export default function MyForm() {
   const [transaction, setTransaction] = useState(null);
   const [{ error, updated }, setStatus] = useState({ error: null, updated: false });
   const { id } = useParams();
-  const [_, categoryLoading] = useCategory();
+  const [__, categoryLoading] = useCategory();
 
   async function handleSubmit(tr) {
     try {
