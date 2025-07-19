@@ -1,6 +1,5 @@
 body:has(.errorPage) {
   font-family: 'Poppins', 'sans-serif';
-  /* background-color: royalblue; */
   background: -webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc, #ee8176);
   min-height: 100vh;
 }

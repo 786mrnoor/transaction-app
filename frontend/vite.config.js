@@ -34,7 +34,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'build', // CRA's default build output
+    outDir: 'dist', // CRA's default build output
   },
   resolve: {
     alias: {
